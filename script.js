@@ -66,9 +66,7 @@ function buildStudy(subjects) {
     document.getElementById("study-container");
 
   if (!container) {
-    console.error(
-      "Missing #study-container in index.html"
-    );
+    console.error("study-container not found.");
     return;
   }
 
@@ -78,18 +76,18 @@ function buildStudy(subjects) {
 
     const methods = [...subject.methods];
 
-    // Randomize method order
+    // Randomize the eight methods
     shuffle(methods);
 
-    // -------------------------
-    // Subject
-    // -------------------------
+    // ============================
+    // SUBJECT BLOCK
+    // ============================
 
-    const subjectBlock =
+    const block =
       document.createElement("section");
 
-    subjectBlock.className =
-      "subject-block";
+    block.className = "subject-block";
+
 
     const title =
       document.createElement("h2");
@@ -97,21 +95,61 @@ function buildStudy(subjects) {
     title.textContent =
       `Subject ${subject.name}`;
 
-    subjectBlock.appendChild(title);
+    block.appendChild(title);
 
-    // -------------------------
-    // Image grid
-    // -------------------------
 
-    const grid =
+    // ============================
+    // MAIN LAYOUT
+    // ============================
+
+    const layout =
       document.createElement("div");
 
-    grid.className =
-      "image-grid";
+    layout.className =
+      "study-layout";
 
-    // -------------------------
-    // Method images
-    // -------------------------
+
+    // ============================
+    // INPUT + MASK
+    // ============================
+
+    const inputCard =
+      document.createElement("div");
+
+    inputCard.className =
+      "input-card";
+
+    const inputLabel =
+      document.createElement("h3");
+
+    inputLabel.textContent =
+      "Input + Mask";
+
+    const inputImage =
+      document.createElement("img");
+
+    inputImage.src =
+      subject.input_mask;
+
+    inputImage.alt =
+      "Input and mask";
+
+    inputCard.appendChild(inputLabel);
+    inputCard.appendChild(inputImage);
+
+    layout.appendChild(inputCard);
+
+
+    // ============================
+    // OPTIONS GRID
+    // ============================
+
+    const optionsGrid =
+      document.createElement("div");
+
+    optionsGrid.className =
+      "options-grid";
+
 
     methods.forEach((method, index) => {
 
@@ -124,61 +162,79 @@ function buildStudy(subjects) {
       card.className =
         "image-card";
 
-      // Option label
+
       const label =
         document.createElement("h3");
 
       label.textContent =
         `Option ${option}`;
 
-      // Image
+
       const image =
         document.createElement("img");
 
-      image.src = method.file;
+      image.src =
+        method.file;
 
       image.alt =
         `Option ${option}`;
 
-      image.loading = "lazy";
+      image.loading =
+        "lazy";
 
-      // Selection
+
+      // ============================
+      // CLICK TO SELECT
+      // ============================
+
       card.addEventListener(
         "click",
         () => {
 
-          // Remove selection from all
-          // options in this subject
-          grid
+          optionsGrid
             .querySelectorAll(".image-card")
             .forEach(item => {
+
               item.classList.remove(
                 "selected"
               );
+
             });
 
-          // Select this option
-          card.classList.add("selected");
 
-          // Save vote
+          card.classList.add(
+            "selected"
+          );
+
+
           saveResponse(
             subject.name,
             option,
             method.name
           );
+
         }
       );
+
 
       card.appendChild(label);
       card.appendChild(image);
 
-      grid.appendChild(card);
+      optionsGrid.appendChild(card);
+
     });
 
-    subjectBlock.appendChild(grid);
 
-    container.appendChild(subjectBlock);
+    layout.appendChild(optionsGrid);
+
+    block.appendChild(layout);
+
+    container.appendChild(block);
+
   });
+
+
+  updateProgress();
 }
 
 

@@ -2,6 +2,7 @@
   "subjects": [
     {
       "name": "1",
+      "input_mask": "Method/Input+Mask/1.png",
       "methods": [
         {
           "name": "FLAIR",
@@ -39,6 +40,7 @@
     },
     {
       "name": "2",
+      "input_mask": "Method/Input+Mask/2.png",
       "methods": [
         {
           "name": "FLAIR",
@@ -76,6 +78,7 @@
     },
     {
       "name": "3",
+      "input_mask": "Method/Input+Mask/3.png",
       "methods": [
         {
           "name": "FLAIR",
@@ -113,6 +116,7 @@
     },
     {
       "name": "4",
+      "input_mask": "Method/Input+Mask/4.png",
       "methods": [
         {
           "name": "FLAIR",
@@ -150,6 +154,7 @@
     },
     {
       "name": "5",
+      "input_mask": "Method/Input+Mask/5.png",
       "methods": [
         {
           "name": "FLAIR",
@@ -187,6 +192,7 @@
     },
     {
       "name": "6",
+      "input_mask": "Method/Input+Mask/6.png",
       "methods": [
         {
           "name": "FLAIR",
@@ -224,6 +230,7 @@
     },
     {
       "name": "7",
+      "input_mask": "Method/Input+Mask/7.png",
       "methods": [
         {
           "name": "FLAIR",
@@ -261,6 +268,7 @@
     },
     {
       "name": "8",
+      "input_mask": "Method/Input+Mask/8.png",
       "methods": [
         {
           "name": "FLAIR",
@@ -298,6 +306,7 @@
     },
     {
       "name": "9",
+      "input_mask": "Method/Input+Mask/9.png",
       "methods": [
         {
           "name": "FLAIR",
@@ -335,6 +344,7 @@
     },
     {
       "name": "10",
+      "input_mask": "Method/Input+Mask/10.png",
       "methods": [
         {
           "name": "FLAIR",

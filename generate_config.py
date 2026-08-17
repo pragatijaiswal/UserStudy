@@ -6,6 +6,8 @@ OUTPUT_JSON = "config.json"
 
 IMAGE_EXTS = (".png", ".jpg", ".jpeg", ".webp")
 
+INPUT_MASK_NAME = "Input+Mask"
+
 
 def find_images(folder):
     files = [
@@ -32,6 +34,7 @@ if not os.path.isdir(IMAGES_DIR):
 
 subjects_data = {}
 
+
 for method in sorted(os.listdir(IMAGES_DIR)):
 
     method_path = os.path.join(IMAGES_DIR, method)
@@ -45,6 +48,8 @@ for method in sorted(os.listdir(IMAGES_DIR)):
         print(f"WARNING: No images found in {method}")
         continue
 
+    print(f"\nProcessing {method}")
+
     for filename in images:
 
         subject = os.path.splitext(filename)[0]
@@ -53,7 +58,10 @@ for method in sorted(os.listdir(IMAGES_DIR)):
             continue
 
         if subject not in subjects_data:
-            subjects_data[subject] = []
+            subjects_data[subject] = {
+                "input_mask": None,
+                "methods": []
+            }
 
         relative_path = os.path.join(
             IMAGES_DIR,
@@ -61,26 +69,61 @@ for method in sorted(os.listdir(IMAGES_DIR)):
             filename
         ).replace("\\", "/")
 
-        subjects_data[subject].append({
-            "name": method,
-            "file": relative_path
-        })
+
+        # ============================
+        # INPUT + MASK
+        # ============================
+
+        if method.lower() == INPUT_MASK_NAME.lower():
+
+            subjects_data[subject]["input_mask"] = relative_path
+
+            print(
+                f"  Input+Mask: {relative_path}"
+            )
+
+        else:
+
+            subjects_data[subject]["methods"].append({
+                "name": method,
+                "file": relative_path
+            })
+
+            print(
+                f"  Method: {method} -> {relative_path}"
+            )
 
 
 subjects = []
+
 
 for subject in sorted(
     subjects_data.keys(),
     key=lambda x: int(x)
 ):
 
+    data = subjects_data[subject]
+
+    if data["input_mask"] is None:
+        print(
+            f"WARNING: No Input+Mask for Subject {subject}"
+        )
+
+    if not data["methods"]:
+        print(
+            f"WARNING: No methods for Subject {subject}"
+        )
+        continue
+
     subjects.append({
         "name": subject,
-        "methods": subjects_data[subject]
+        "input_mask": data["input_mask"],
+        "methods": data["methods"]
     })
 
 
 with open(OUTPUT_JSON, "w") as f:
+
     json.dump(
         {"subjects": subjects},
         f,
@@ -88,7 +131,7 @@ with open(OUTPUT_JSON, "w") as f:
     )
 
 
-print(
-    f"Generated {OUTPUT_JSON} "
-    f"with {len(subjects)} subjects."
-)
+print("\n================================")
+print("config.json generated")
+print("================================")
+print(f"Subjects: {len(subjects)}")
