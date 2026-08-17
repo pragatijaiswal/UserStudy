@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Study</title>
 
-  <link rel="stylesheet" href="style.css?v=1.1">
+  <title>Blind Image Comparison Study</title>
+
+  <link rel="stylesheet" href="style.css?v=1.2">
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -15,24 +16,32 @@
 
   <div class="container">
 
-    <h1>User Study for Image Inpainting</h1>
+    <h1>Blind Image Comparison Study</h1>
 
     <p>
-      This study evaluates the quality and realism of images generated using different inpainting methods.
+      This study evaluates the visual quality and realism of
+      images generated using different image inpainting methods.
     </p>
 
     <p class="instructions">
-      <strong>Instructions:</strong> In each row of images below, please inspect the options (which are shuffled) and click <strong>"Select"</strong> on the one you find most realistic, natural, and free of artifacts. Once you've made a selection for all rows, click the <strong>"Submit Responses"</strong> button at the bottom.
+      <strong>Instructions:</strong>
+      For each subject, compare the anonymized image options
+      and select the one that you find most realistic, natural,
+      and free of visual artifacts. The order of the options is
+      randomized for each subject.
     </p>
+
     <div id="study-container"></div>
 
-    <button id="submit-btn">Submit Responses</button>
+    <button id="submit-btn">
+      Submit Responses
+    </button>
 
     <div id="status"></div>
 
   </div>
 
-  <script src="script.js?v=1.1"></script>
+  <script src="script.js?v=1.2"></script>
 
 </body>
 
