@@ -89,13 +89,13 @@ function buildStudy(subjects) {
     block.className = "subject-block";
 
 
-    const title =
-      document.createElement("h2");
+    // const title =
+    //   document.createElement("h2");
 
-    title.textContent =
-      `Subject ${subject.name}`;
+    // title.textContent =
+    //   `Subject ${subject.name}`;
 
-    block.appendChild(title);
+    // block.appendChild(title);
 
 
     // ============================
