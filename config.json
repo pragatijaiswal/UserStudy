@@ -1,0 +1,374 @@
+{
+  "subjects": [
+    {
+      "name": "1",
+      "methods": [
+        {
+          "name": "FLAIR",
+          "file": "FLAIR/1.png"
+        },
+        {
+          "name": "GeoRemover",
+          "file": "GeoRemover/1.png"
+        },
+        {
+          "name": "LBM",
+          "file": "LBM/1.png"
+        },
+        {
+          "name": "ObjectClear",
+          "file": "ObjectClear/1.png"
+        },
+        {
+          "name": "OmniEraser",
+          "file": "OmniEraser/1.png"
+        },
+        {
+          "name": "Ours",
+          "file": "Ours/1.png"
+        },
+        {
+          "name": "PowerPaint",
+          "file": "PowerPaint/1.png"
+        },
+        {
+          "name": "SDXL-Inpainting",
+          "file": "SDXL-Inpainting/1.png"
+        }
+      ]
+    },
+    {
+      "name": "2",
+      "methods": [
+        {
+          "name": "FLAIR",
+          "file": "FLAIR/2.png"
+        },
+        {
+          "name": "GeoRemover",
+          "file": "GeoRemover/2.png"
+        },
+        {
+          "name": "LBM",
+          "file": "LBM/2.png"
+        },
+        {
+          "name": "ObjectClear",
+          "file": "ObjectClear/2.png"
+        },
+        {
+          "name": "OmniEraser",
+          "file": "OmniEraser/2.png"
+        },
+        {
+          "name": "Ours",
+          "file": "Ours/2.png"
+        },
+        {
+          "name": "PowerPaint",
+          "file": "PowerPaint/2.png"
+        },
+        {
+          "name": "SDXL-Inpainting",
+          "file": "SDXL-Inpainting/2.png"
+        }
+      ]
+    },
+    {
+      "name": "3",
+      "methods": [
+        {
+          "name": "FLAIR",
+          "file": "FLAIR/3.png"
+        },
+        {
+          "name": "GeoRemover",
+          "file": "GeoRemover/3.png"
+        },
+        {
+          "name": "LBM",
+          "file": "LBM/3.png"
+        },
+        {
+          "name": "ObjectClear",
+          "file": "ObjectClear/3.png"
+        },
+        {
+          "name": "OmniEraser",
+          "file": "OmniEraser/3.png"
+        },
+        {
+          "name": "Ours",
+          "file": "Ours/3.png"
+        },
+        {
+          "name": "PowerPaint",
+          "file": "PowerPaint/3.png"
+        },
+        {
+          "name": "SDXL-Inpainting",
+          "file": "SDXL-Inpainting/3.png"
+        }
+      ]
+    },
+    {
+      "name": "4",
+      "methods": [
+        {
+          "name": "FLAIR",
+          "file": "FLAIR/4.png"
+        },
+        {
+          "name": "GeoRemover",
+          "file": "GeoRemover/4.png"
+        },
+        {
+          "name": "LBM",
+          "file": "LBM/4.png"
+        },
+        {
+          "name": "ObjectClear",
+          "file": "ObjectClear/4.png"
+        },
+        {
+          "name": "OmniEraser",
+          "file": "OmniEraser/4.png"
+        },
+        {
+          "name": "Ours",
+          "file": "Ours/4.png"
+        },
+        {
+          "name": "PowerPaint",
+          "file": "PowerPaint/4.png"
+        },
+        {
+          "name": "SDXL-Inpainting",
+          "file": "SDXL-Inpainting/4.png"
+        }
+      ]
+    },
+    {
+      "name": "5",
+      "methods": [
+        {
+          "name": "FLAIR",
+          "file": "FLAIR/5.png"
+        },
+        {
+          "name": "GeoRemover",
+          "file": "GeoRemover/5.png"
+        },
+        {
+          "name": "LBM",
+          "file": "LBM/5.png"
+        },
+        {
+          "name": "ObjectClear",
+          "file": "ObjectClear/5.png"
+        },
+        {
+          "name": "OmniEraser",
+          "file": "OmniEraser/5.png"
+        },
+        {
+          "name": "Ours",
+          "file": "Ours/5.png"
+        },
+        {
+          "name": "PowerPaint",
+          "file": "PowerPaint/5.png"
+        },
+        {
+          "name": "SDXL-Inpainting",
+          "file": "SDXL-Inpainting/5.png"
+        }
+      ]
+    },
+    {
+      "name": "6",
+      "methods": [
+        {
+          "name": "FLAIR",
+          "file": "FLAIR/6.png"
+        },
+        {
+          "name": "GeoRemover",
+          "file": "GeoRemover/6.png"
+        },
+        {
+          "name": "LBM",
+          "file": "LBM/6.png"
+        },
+        {
+          "name": "ObjectClear",
+          "file": "ObjectClear/6.png"
+        },
+        {
+          "name": "OmniEraser",
+          "file": "OmniEraser/6.png"
+        },
+        {
+          "name": "Ours",
+          "file": "Ours/6.png"
+        },
+        {
+          "name": "PowerPaint",
+          "file": "PowerPaint/6.png"
+        },
+        {
+          "name": "SDXL-Inpainting",
+          "file": "SDXL-Inpainting/6.png"
+        }
+      ]
+    },
+    {
+      "name": "7",
+      "methods": [
+        {
+          "name": "FLAIR",
+          "file": "FLAIR/7.png"
+        },
+        {
+          "name": "GeoRemover",
+          "file": "GeoRemover/7.png"
+        },
+        {
+          "name": "LBM",
+          "file": "LBM/7.png"
+        },
+        {
+          "name": "ObjectClear",
+          "file": "ObjectClear/7.png"
+        },
+        {
+          "name": "OmniEraser",
+          "file": "OmniEraser/7.png"
+        },
+        {
+          "name": "Ours",
+          "file": "Ours/7.png"
+        },
+        {
+          "name": "PowerPaint",
+          "file": "PowerPaint/7.png"
+        },
+        {
+          "name": "SDXL-Inpainting",
+          "file": "SDXL-Inpainting/7.png"
+        }
+      ]
+    },
+    {
+      "name": "8",
+      "methods": [
+        {
+          "name": "FLAIR",
+          "file": "FLAIR/8.png"
+        },
+        {
+          "name": "GeoRemover",
+          "file": "GeoRemover/8.png"
+        },
+        {
+          "name": "LBM",
+          "file": "LBM/8.png"
+        },
+        {
+          "name": "ObjectClear",
+          "file": "ObjectClear/8.png"
+        },
+        {
+          "name": "OmniEraser",
+          "file": "OmniEraser/8.png"
+        },
+        {
+          "name": "Ours",
+          "file": "Ours/8.png"
+        },
+        {
+          "name": "PowerPaint",
+          "file": "PowerPaint/8.png"
+        },
+        {
+          "name": "SDXL-Inpainting",
+          "file": "SDXL-Inpainting/8.png"
+        }
+      ]
+    },
+    {
+      "name": "9",
+      "methods": [
+        {
+          "name": "FLAIR",
+          "file": "FLAIR/9.png"
+        },
+        {
+          "name": "GeoRemover",
+          "file": "GeoRemover/9.png"
+        },
+        {
+          "name": "LBM",
+          "file": "LBM/9.png"
+        },
+        {
+          "name": "ObjectClear",
+          "file": "ObjectClear/9.png"
+        },
+        {
+          "name": "OmniEraser",
+          "file": "OmniEraser/9.png"
+        },
+        {
+          "name": "Ours",
+          "file": "Ours/9.png"
+        },
+        {
+          "name": "PowerPaint",
+          "file": "PowerPaint/9.png"
+        },
+        {
+          "name": "SDXL-Inpainting",
+          "file": "SDXL-Inpainting/9.png"
+        }
+      ]
+    },
+    {
+      "name": "10",
+      "methods": [
+        {
+          "name": "FLAIR",
+          "file": "FLAIR/10.png"
+        },
+        {
+          "name": "GeoRemover",
+          "file": "GeoRemover/10.png"
+        },
+        {
+          "name": "LBM",
+          "file": "LBM/10.png"
+        },
+        {
+          "name": "ObjectClear",
+          "file": "ObjectClear/10.png"
+        },
+        {
+          "name": "OmniEraser",
+          "file": "OmniEraser/10.png"
+        },
+        {
+          "name": "Ours",
+          "file": "Ours/10.png"
+        },
+        {
+          "name": "PowerPaint",
+          "file": "PowerPaint/10.png"
+        },
+        {
+          "name": "SDXL-Inpainting",
+          "file": "SDXL-Inpainting/10.png"
+        }
+      ]
+    }
+  ]
+}
