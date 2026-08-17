@@ -6,7 +6,8 @@ body {
 }
 
 .container {
-  max-width: 1600px;
+  width: 95%;
+  max-width: 1800px;
   margin: auto;
 }
 
@@ -25,15 +26,15 @@ p {
 
 .subject-block {
   background: white;
-  margin-bottom: 60px;
-  padding: 30px;
+  margin-bottom: 40px;
+  padding: 20px;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 15px;
   margin-top: 20px;
 }
@@ -85,4 +86,58 @@ button:hover {
   text-align: center;
   font-size: 20px;
   margin-bottom: 50px;
+}
+
+.instructions {
+  background: #eef7ff;
+  border-left: 4px solid #007bff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  max-width: 850px;
+  margin: 0 auto 30px auto;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1400px) {
+  .container {
+    width: 98%;
+  }
+  .subject-block {
+    padding: 15px;
+  }
+  .image-grid {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  /* On tablets and mobile, allow side-scrolling to keep all options on a single row without squeezing them to zero width */
+  .image-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    padding-bottom: 15px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .image-card {
+    flex: 0 0 160px;
+  }
+  .image-grid::-webkit-scrollbar {
+    height: 8px;
+  }
+  .image-grid::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  .image-grid::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+  .image-grid::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
 }

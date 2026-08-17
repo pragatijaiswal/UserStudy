@@ -2,8 +2,8 @@
 // SUPABASE CONFIG
 // ============================
 
-//const SUPABASE_URL = 'https://uyxeucbukctlchvltzad.supabase.co/';
-//const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV5eGV1Y2J1a2N0bGNodmx0emFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgxNDYyNzAsImV4cCI6MjA5MzcyMjI3MH0.2bnkjCWoyRRpw0pohCVUR-J3sM08frYBwMUUw-DkOeQ';
+const SUPABASE_URL = 'https://lancfpfrehvumzbzdnr.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxhbmNjcGZyZWhodXZtemJ6ZG5yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY5NTcwMDEsImV4cCI6MjEwMjUzMzAwMX0.fHBynl-sHRl59YmCAXESRseDiXwWHkS0FUi1S0LJvwI';
 
 const supabaseClient = supabase.createClient(
   SUPABASE_URL,
@@ -11,199 +11,357 @@ const supabaseClient = supabase.createClient(
 );
 
 // ============================
-// GLOBALS
+// STUDY STATE
 // ============================
-
-let responses = [];
 
 const participantId = crypto.randomUUID();
 
+let responses = [];
+
+
 // ============================
-// LOAD CONFIG
+// LOAD CONFIGURATION
 // ============================
 
-fetch('config.json')
-  .then(response => {
-    if (!response.ok) throw new Error("Failed to load config.json");
-    return response.json();
-  })
-  .then(data => {
-    buildStudy(data.subjects);
-  })
-  .catch(err => {
-    console.error(err);
-    document.getElementById("status").innerText = "Error loading configuration.";
-  });
+async function loadStudy() {
+  try {
+    const response = await fetch("./config.json");
+
+    if (!response.ok) {
+      throw new Error(
+        `Could not load config.json (${response.status})`
+      );
+    }
+
+    const config = await response.json();
+
+    if (!Array.isArray(config.subjects)) {
+      throw new Error("Invalid config.json");
+    }
+
+    buildStudy(config.subjects);
+
+  } catch (error) {
+    console.error(error);
+
+    const status = document.getElementById("status");
+
+    if (status) {
+      status.textContent =
+        "Unable to load the study.";
+    }
+  }
+}
+
 
 // ============================
 // BUILD STUDY
 // ============================
+
 function buildStudy(subjects) {
 
-  const container = document.getElementById("study-container");
+  const container =
+    document.getElementById("study-container");
+
+  if (!container) {
+    console.error(
+      "Missing #study-container in index.html"
+    );
+    return;
+  }
+
+  container.innerHTML = "";
 
   subjects.forEach(subject => {
 
-    const subjectName = subject.name;
-
-    // clone + shuffle methods (blind poll)
     const methods = [...subject.methods];
-    shuffleArray(methods);
 
-    const block = document.createElement("div");
-    block.className = "subject-block";
+    // Randomize method order
+    shuffle(methods);
 
-    const title = document.createElement("h2");
-    title.innerText = subjectName;
-    block.appendChild(title);
+    // -------------------------
+    // Subject
+    // -------------------------
 
-    const grid = document.createElement("div");
-    grid.className = "image-grid";
+    const subjectBlock =
+      document.createElement("section");
 
-    // =========================
-    // GT IMAGE (reference only)
-    // =========================
-    const gtCard = document.createElement("div");
-    gtCard.className = "image-card";
+    subjectBlock.className =
+      "subject-block";
 
-    const gtImg = document.createElement("img");
-    gtImg.src = `images/${subject.gt}`;
-    gtImg.alt = "GT";
+    const title =
+      document.createElement("h2");
 
-    const gtLabel = document.createElement("h3");
-    gtLabel.innerText = "Reference";
+    title.textContent =
+      `Subject ${subject.name}`;
 
-    gtCard.appendChild(gtLabel);
-    gtCard.appendChild(gtImg);
+    subjectBlock.appendChild(title);
 
-    grid.appendChild(gtCard);
+    // -------------------------
+    // Image grid
+    // -------------------------
 
-    // =========================
-    // METHOD OPTIONS (blind)
-    // =========================
+    const grid =
+      document.createElement("div");
+
+    grid.className =
+      "image-grid";
+
+    // -------------------------
+    // Method images
+    // -------------------------
+
     methods.forEach((method, index) => {
 
-      const optionLetter = String.fromCharCode(65 + index);
+      const option =
+        String.fromCharCode(65 + index);
 
-      const card = document.createElement("div");
-      card.className = "image-card";
+      const card =
+        document.createElement("div");
 
-      const img = document.createElement("img");
-      img.src = `images/${method.file}`;
-      img.alt = method.name;
+      card.className =
+        "image-card";
 
-      const label = document.createElement("h3");
-      label.innerText = `Option ${optionLetter}`;
+      // Option label
+      const label =
+        document.createElement("h3");
 
-      const button = document.createElement("button");
-      button.innerText = "Select";
+      label.textContent =
+        `Option ${option}`;
 
-      button.addEventListener("click", () => {
+      // Image
+      const image =
+        document.createElement("img");
 
-        // remove previous selection
-        grid.querySelectorAll(".image-card").forEach(c => {
-          c.classList.remove("selected");
-        });
+      image.src =
+        `Method/${method.file}`;
 
-        card.classList.add("selected");
+      image.alt =
+        `Option ${option}`;
 
-        saveResponse({
-          subject: subjectName,
-          selected_option: optionLetter,
-          method: method.name
-        });
-      });
+      image.loading = "lazy";
+
+      // Selection
+      card.addEventListener(
+        "click",
+        () => {
+
+          // Remove selection from all
+          // options in this subject
+          grid
+            .querySelectorAll(".image-card")
+            .forEach(item => {
+              item.classList.remove(
+                "selected"
+              );
+            });
+
+          // Select this option
+          card.classList.add("selected");
+
+          // Save vote
+          saveResponse(
+            subject.name,
+            option,
+            method.name
+          );
+        }
+      );
 
       card.appendChild(label);
-      card.appendChild(img);
-      card.appendChild(button);
+      card.appendChild(image);
 
       grid.appendChild(card);
     });
 
-    block.appendChild(grid);
-    container.appendChild(block);
+    subjectBlock.appendChild(grid);
+
+    container.appendChild(subjectBlock);
   });
 }
 
+
 // ============================
-// SAVE LOCAL RESPONSE
+// SAVE RESPONSE LOCALLY
 // ============================
 
-function saveResponse(entry) {
-  // correctly filter by subject_name
-  responses = responses.filter(r => r.subject_name !== entry.subject);
+function saveResponse(
+  subjectName,
+  option,
+  actualMethod
+) {
+
+  // Replace previous vote
+  // for this subject.
+  responses =
+    responses.filter(
+      response =>
+        response.subject_name !==
+        subjectName
+    );
+
   responses.push({
     participant_id: participantId,
-    subject_name: entry.subject,
-    selected_option: entry.selected_option,
-    actual_method: entry.method
+    subject_name: subjectName,
+    selected_option: option,
+    actual_method: actualMethod
   });
-  console.log("Response saved:", entry);
+
+  updateProgress();
 }
+
+
+// ============================
+// PROGRESS
+// ============================
+
+function updateProgress() {
+
+  const totalSubjects =
+    document.querySelectorAll(
+      ".subject-block"
+    ).length;
+
+  const completed =
+    responses.length;
+
+  const status =
+    document.getElementById("status");
+
+  if (status) {
+
+    status.textContent =
+      `${completed} / ${totalSubjects} completed`;
+  }
+}
+
 
 // ============================
 // SHUFFLE
 // ============================
 
-function shuffleArray(array) {
+function shuffle(array) {
 
-  for (let i = array.length - 1; i > 0; i--) {
+  for (
+    let i = array.length - 1;
+    i > 0;
+    i--
+  ) {
 
-    const j = Math.floor(Math.random() * (i + 1));
+    const j =
+      Math.floor(
+        Math.random() * (i + 1)
+      );
 
-    [array[i], array[j]] = [array[j], array[i]];
+    [
+      array[i],
+      array[j]
+    ] = [
+        array[j],
+        array[i]
+      ];
   }
 }
 
+
 // ============================
-// SUBMIT TO SUPABASE
+// SUBMIT
 // ============================
 
-const submitBtn = document.getElementById('submit-btn');
+async function submitStudy() {
 
-submitBtn.addEventListener('click', async () => {
+  const submitButton =
+    document.getElementById(
+      "submit-btn"
+    );
 
-  const status = document.getElementById('status');
+  const status =
+    document.getElementById(
+      "status"
+    );
 
-  if (responses.length === 0) {
-    status.innerText = 'No responses selected.';
+  const totalSubjects =
+    document.querySelectorAll(
+      ".subject-block"
+    ).length;
+
+  // Require all subjects
+  if (
+    responses.length !==
+    totalSubjects
+  ) {
+
+    status.textContent =
+      `Please select one image for every subject ` +
+      `(${responses.length}/${totalSubjects}).`;
+
     return;
   }
 
-  // Backup download function
-  const downloadResults = () => {
-    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(responses, null, 2));
-    const downloadAnchorNode = document.createElement('a');
-    downloadAnchorNode.setAttribute("href", dataStr);
-    downloadAnchorNode.setAttribute("download", `study_results_${participantId}.json`);
-    document.body.appendChild(downloadAnchorNode);
-    downloadAnchorNode.click();
-    downloadAnchorNode.remove();
-  };
+  submitButton.disabled = true;
 
-  if (!supabaseClient) {
-    status.innerText = 'Supabase not configured. Downloading results locally...';
-    downloadResults();
-    status.innerText = 'Results downloaded locally.';
-    return;
-  }
-
-  status.innerText = 'Submitting...';
+  status.textContent =
+    "Submitting...";
 
   try {
-    const { error } = await supabaseClient
-      .from('responses')
-      .insert(responses);
 
-    if (error) throw error;
+    const { error } =
+      await supabaseClient
+        .from("responses")
+        .insert(responses);
 
-    status.innerText = 'Responses submitted successfully!';
-    submitBtn.disabled = true;
+    if (error) {
+      throw error;
+    }
+
+    status.textContent =
+      "Thank you! Your responses have been submitted.";
+
+    // Prevent duplicate submission
+    submitButton.disabled = true;
+
+    document
+      .querySelectorAll(".image-card")
+      .forEach(card => {
+        card.style.pointerEvents = "none";
+      });
 
   } catch (error) {
-    console.error(error);
-    status.innerText = 'Submission failed. Downloading results locally as fallback...';
-    downloadResults();
+
+    console.error(
+      "Submission error:",
+      error
+    );
+
+    status.textContent =
+      "Submission failed. Please try again.";
+
+    submitButton.disabled = false;
   }
-});
+}
+
+
+// ============================
+// START
+// ============================
+
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    loadStudy();
+
+    const submitButton =
+      document.getElementById(
+        "submit-btn"
+      );
+
+    if (submitButton) {
+
+      submitButton.addEventListener(
+        "click",
+        submitStudy
+      );
+    }
+  }
+);
