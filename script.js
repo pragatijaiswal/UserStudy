@@ -2,7 +2,7 @@
 // SUPABASE CONFIG
 // ============================
 
-const SUPABASE_URL = 'https://lancfpfrehvumzbzdnr.supabase.co';
+const SUPABASE_URL = 'https://lanccpfrehhuvmzbzdnr.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxhbmNjcGZyZWhodXZtemJ6ZG5yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY5NTcwMDEsImV4cCI6MjEwMjUzMzAwMX0.fHBynl-sHRl59YmCAXESRseDiXwWHkS0FUi1S0LJvwI';
 
 const supabaseClient = supabase.createClient(
@@ -14,9 +14,11 @@ const supabaseClient = supabase.createClient(
 // STUDY STATE
 // ============================
 
-const participantId = crypto.randomUUID();
-
+const participantId =
+  Date.now().toString(36) +
+  Math.random().toString(36).substring(2, 10);
 let responses = [];
+
 
 
 // ============================
@@ -133,8 +135,7 @@ function buildStudy(subjects) {
       const image =
         document.createElement("img");
 
-      image.src =
-        `Method/${method.file}`;
+      image.src = method.file;
 
       image.alt =
         `Option ${option}`;

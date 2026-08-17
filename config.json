@@ -5,35 +5,35 @@
       "methods": [
         {
           "name": "FLAIR",
-          "file": "FLAIR/1.png"
+          "file": "Method/FLAIR/1.png"
         },
         {
           "name": "GeoRemover",
-          "file": "GeoRemover/1.png"
+          "file": "Method/GeoRemover/1.png"
         },
         {
           "name": "LBM",
-          "file": "LBM/1.png"
+          "file": "Method/LBM/1.png"
         },
         {
           "name": "ObjectClear",
-          "file": "ObjectClear/1.png"
+          "file": "Method/ObjectClear/1.png"
         },
         {
           "name": "OmniEraser",
-          "file": "OmniEraser/1.png"
+          "file": "Method/OmniEraser/1.png"
         },
         {
           "name": "Ours",
-          "file": "Ours/1.png"
+          "file": "Method/Ours/1.png"
         },
         {
           "name": "PowerPaint",
-          "file": "PowerPaint/1.png"
+          "file": "Method/PowerPaint/1.png"
         },
         {
           "name": "SDXL-Inpainting",
-          "file": "SDXL-Inpainting/1.png"
+          "file": "Method/SDXL-Inpainting/1.png"
         }
       ]
     },
@@ -42,35 +42,35 @@
       "methods": [
         {
           "name": "FLAIR",
-          "file": "FLAIR/2.png"
+          "file": "Method/FLAIR/2.png"
         },
         {
           "name": "GeoRemover",
-          "file": "GeoRemover/2.png"
+          "file": "Method/GeoRemover/2.png"
         },
         {
           "name": "LBM",
-          "file": "LBM/2.png"
+          "file": "Method/LBM/2.png"
         },
         {
           "name": "ObjectClear",
-          "file": "ObjectClear/2.png"
+          "file": "Method/ObjectClear/2.png"
         },
         {
           "name": "OmniEraser",
-          "file": "OmniEraser/2.png"
+          "file": "Method/OmniEraser/2.png"
         },
         {
           "name": "Ours",
-          "file": "Ours/2.png"
+          "file": "Method/Ours/2.png"
         },
         {
           "name": "PowerPaint",
-          "file": "PowerPaint/2.png"
+          "file": "Method/PowerPaint/2.png"
         },
         {
           "name": "SDXL-Inpainting",
-          "file": "SDXL-Inpainting/2.png"
+          "file": "Method/SDXL-Inpainting/2.png"
         }
       ]
     },
@@ -79,35 +79,35 @@
       "methods": [
         {
           "name": "FLAIR",
-          "file": "FLAIR/3.png"
+          "file": "Method/FLAIR/3.png"
         },
         {
           "name": "GeoRemover",
-          "file": "GeoRemover/3.png"
+          "file": "Method/GeoRemover/3.png"
         },
         {
           "name": "LBM",
-          "file": "LBM/3.png"
+          "file": "Method/LBM/3.png"
         },
         {
           "name": "ObjectClear",
-          "file": "ObjectClear/3.png"
+          "file": "Method/ObjectClear/3.png"
         },
         {
           "name": "OmniEraser",
-          "file": "OmniEraser/3.png"
+          "file": "Method/OmniEraser/3.png"
         },
         {
           "name": "Ours",
-          "file": "Ours/3.png"
+          "file": "Method/Ours/3.png"
         },
         {
           "name": "PowerPaint",
-          "file": "PowerPaint/3.png"
+          "file": "Method/PowerPaint/3.png"
         },
         {
           "name": "SDXL-Inpainting",
-          "file": "SDXL-Inpainting/3.png"
+          "file": "Method/SDXL-Inpainting/3.png"
         }
       ]
     },
@@ -116,35 +116,35 @@
       "methods": [
         {
           "name": "FLAIR",
-          "file": "FLAIR/4.png"
+          "file": "Method/FLAIR/4.png"
         },
         {
           "name": "GeoRemover",
-          "file": "GeoRemover/4.png"
+          "file": "Method/GeoRemover/4.png"
         },
         {
           "name": "LBM",
-          "file": "LBM/4.png"
+          "file": "Method/LBM/4.png"
         },
         {
           "name": "ObjectClear",
-          "file": "ObjectClear/4.png"
+          "file": "Method/ObjectClear/4.png"
         },
         {
           "name": "OmniEraser",
-          "file": "OmniEraser/4.png"
+          "file": "Method/OmniEraser/4.png"
         },
         {
           "name": "Ours",
-          "file": "Ours/4.png"
+          "file": "Method/Ours/4.png"
         },
         {
           "name": "PowerPaint",
-          "file": "PowerPaint/4.png"
+          "file": "Method/PowerPaint/4.png"
         },
         {
           "name": "SDXL-Inpainting",
-          "file": "SDXL-Inpainting/4.png"
+          "file": "Method/SDXL-Inpainting/4.png"
         }
       ]
     },
@@ -153,35 +153,35 @@
       "methods": [
         {
           "name": "FLAIR",
-          "file": "FLAIR/5.png"
+          "file": "Method/FLAIR/5.png"
         },
         {
           "name": "GeoRemover",
-          "file": "GeoRemover/5.png"
+          "file": "Method/GeoRemover/5.png"
         },
         {
           "name": "LBM",
-          "file": "LBM/5.png"
+          "file": "Method/LBM/5.png"
         },
         {
           "name": "ObjectClear",
-          "file": "ObjectClear/5.png"
+          "file": "Method/ObjectClear/5.png"
         },
         {
           "name": "OmniEraser",
-          "file": "OmniEraser/5.png"
+          "file": "Method/OmniEraser/5.png"
         },
         {
           "name": "Ours",
-          "file": "Ours/5.png"
+          "file": "Method/Ours/5.png"
         },
         {
           "name": "PowerPaint",
-          "file": "PowerPaint/5.png"
+          "file": "Method/PowerPaint/5.png"
         },
         {
           "name": "SDXL-Inpainting",
-          "file": "SDXL-Inpainting/5.png"
+          "file": "Method/SDXL-Inpainting/5.png"
         }
       ]
     },
@@ -190,35 +190,35 @@
       "methods": [
         {
           "name": "FLAIR",
-          "file": "FLAIR/6.png"
+          "file": "Method/FLAIR/6.png"
         },
         {
           "name": "GeoRemover",
-          "file": "GeoRemover/6.png"
+          "file": "Method/GeoRemover/6.png"
         },
         {
           "name": "LBM",
-          "file": "LBM/6.png"
+          "file": "Method/LBM/6.png"
         },
         {
           "name": "ObjectClear",
-          "file": "ObjectClear/6.png"
+          "file": "Method/ObjectClear/6.png"
         },
         {
           "name": "OmniEraser",
-          "file": "OmniEraser/6.png"
+          "file": "Method/OmniEraser/6.png"
         },
         {
           "name": "Ours",
-          "file": "Ours/6.png"
+          "file": "Method/Ours/6.png"
         },
         {
           "name": "PowerPaint",
-          "file": "PowerPaint/6.png"
+          "file": "Method/PowerPaint/6.png"
         },
         {
           "name": "SDXL-Inpainting",
-          "file": "SDXL-Inpainting/6.png"
+          "file": "Method/SDXL-Inpainting/6.png"
         }
       ]
     },
@@ -227,35 +227,35 @@
       "methods": [
         {
           "name": "FLAIR",
-          "file": "FLAIR/7.png"
+          "file": "Method/FLAIR/7.png"
         },
         {
           "name": "GeoRemover",
-          "file": "GeoRemover/7.png"
+          "file": "Method/GeoRemover/7.png"
         },
         {
           "name": "LBM",
-          "file": "LBM/7.png"
+          "file": "Method/LBM/7.png"
         },
         {
           "name": "ObjectClear",
-          "file": "ObjectClear/7.png"
+          "file": "Method/ObjectClear/7.png"
         },
         {
           "name": "OmniEraser",
-          "file": "OmniEraser/7.png"
+          "file": "Method/OmniEraser/7.png"
         },
         {
           "name": "Ours",
-          "file": "Ours/7.png"
+          "file": "Method/Ours/7.png"
         },
         {
           "name": "PowerPaint",
-          "file": "PowerPaint/7.png"
+          "file": "Method/PowerPaint/7.png"
         },
         {
           "name": "SDXL-Inpainting",
-          "file": "SDXL-Inpainting/7.png"
+          "file": "Method/SDXL-Inpainting/7.png"
         }
       ]
     },
@@ -264,35 +264,35 @@
       "methods": [
         {
           "name": "FLAIR",
-          "file": "FLAIR/8.png"
+          "file": "Method/FLAIR/8.png"
         },
         {
           "name": "GeoRemover",
-          "file": "GeoRemover/8.png"
+          "file": "Method/GeoRemover/8.png"
         },
         {
           "name": "LBM",
-          "file": "LBM/8.png"
+          "file": "Method/LBM/8.png"
         },
         {
           "name": "ObjectClear",
-          "file": "ObjectClear/8.png"
+          "file": "Method/ObjectClear/8.png"
         },
         {
           "name": "OmniEraser",
-          "file": "OmniEraser/8.png"
+          "file": "Method/OmniEraser/8.png"
         },
         {
           "name": "Ours",
-          "file": "Ours/8.png"
+          "file": "Method/Ours/8.png"
         },
         {
           "name": "PowerPaint",
-          "file": "PowerPaint/8.png"
+          "file": "Method/PowerPaint/8.png"
         },
         {
           "name": "SDXL-Inpainting",
-          "file": "SDXL-Inpainting/8.png"
+          "file": "Method/SDXL-Inpainting/8.png"
         }
       ]
     },
@@ -301,35 +301,35 @@
       "methods": [
         {
           "name": "FLAIR",
-          "file": "FLAIR/9.png"
+          "file": "Method/FLAIR/9.png"
         },
         {
           "name": "GeoRemover",
-          "file": "GeoRemover/9.png"
+          "file": "Method/GeoRemover/9.png"
         },
         {
           "name": "LBM",
-          "file": "LBM/9.png"
+          "file": "Method/LBM/9.png"
         },
         {
           "name": "ObjectClear",
-          "file": "ObjectClear/9.png"
+          "file": "Method/ObjectClear/9.png"
         },
         {
           "name": "OmniEraser",
-          "file": "OmniEraser/9.png"
+          "file": "Method/OmniEraser/9.png"
         },
         {
           "name": "Ours",
-          "file": "Ours/9.png"
+          "file": "Method/Ours/9.png"
         },
         {
           "name": "PowerPaint",
-          "file": "PowerPaint/9.png"
+          "file": "Method/PowerPaint/9.png"
         },
         {
           "name": "SDXL-Inpainting",
-          "file": "SDXL-Inpainting/9.png"
+          "file": "Method/SDXL-Inpainting/9.png"
         }
       ]
     },
@@ -338,35 +338,35 @@
       "methods": [
         {
           "name": "FLAIR",
-          "file": "FLAIR/10.png"
+          "file": "Method/FLAIR/10.png"
         },
         {
           "name": "GeoRemover",
-          "file": "GeoRemover/10.png"
+          "file": "Method/GeoRemover/10.png"
         },
         {
           "name": "LBM",
-          "file": "LBM/10.png"
+          "file": "Method/LBM/10.png"
         },
         {
           "name": "ObjectClear",
-          "file": "ObjectClear/10.png"
+          "file": "Method/ObjectClear/10.png"
         },
         {
           "name": "OmniEraser",
-          "file": "OmniEraser/10.png"
+          "file": "Method/OmniEraser/10.png"
         },
         {
           "name": "Ours",
-          "file": "Ours/10.png"
+          "file": "Method/Ours/10.png"
         },
         {
           "name": "PowerPaint",
-          "file": "PowerPaint/10.png"
+          "file": "Method/PowerPaint/10.png"
         },
         {
           "name": "SDXL-Inpainting",
-          "file": "SDXL-Inpainting/10.png"
+          "file": "Method/SDXL-Inpainting/10.png"
         }
       ]
     }

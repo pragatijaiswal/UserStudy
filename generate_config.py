@@ -8,14 +8,11 @@ IMAGE_EXTS = (".png", ".jpg", ".jpeg", ".webp")
 
 
 def find_images(folder):
-    """Return sorted list of image files in folder."""
-    files = []
+    files = [
+        f for f in os.listdir(folder)
+        if f.lower().endswith(IMAGE_EXTS)
+    ]
 
-    for f in os.listdir(folder):
-        if f.lower().endswith(IMAGE_EXTS):
-            files.append(f)
-
-    # Numerical sorting: 1.png, 2.png, ..., 9.png, 10.png
     def sort_key(filename):
         name = os.path.splitext(filename)[0]
 
@@ -27,14 +24,13 @@ def find_images(folder):
     return sorted(files, key=sort_key)
 
 
-subjects = []
-
 if not os.path.isdir(IMAGES_DIR):
-    raise FileNotFoundError(f"Folder not found: {IMAGES_DIR}")
+    raise FileNotFoundError(
+        f"Folder not found: {IMAGES_DIR}"
+    )
 
 
-# Find all method folders
-methods_data = {}
+subjects_data = {}
 
 for method in sorted(os.listdir(IMAGES_DIR)):
 
@@ -46,45 +42,44 @@ for method in sorted(os.listdir(IMAGES_DIR)):
     images = find_images(method_path)
 
     if not images:
-        print(f"WARNING: No images in {method}")
+        print(f"WARNING: No images found in {method}")
         continue
 
-    print(f"\nProcessing {method}")
+    for filename in images:
 
-    for img_file in images:
+        subject = os.path.splitext(filename)[0]
 
-        image_name = os.path.splitext(img_file)[0]
+        if not subject.isdigit():
+            continue
 
-        if image_name not in methods_data:
-            methods_data[image_name] = []
+        if subject not in subjects_data:
+            subjects_data[subject] = []
 
-        rel_path = f"{method}/{img_file}"
+        relative_path = os.path.join(
+            IMAGES_DIR,
+            method,
+            filename
+        ).replace("\\", "/")
 
-        print(f"  {image_name}: {rel_path}")
-
-        methods_data[image_name].append({
+        subjects_data[subject].append({
             "name": method,
-            "file": rel_path
+            "file": relative_path
         })
 
 
-# Sort subjects numerically
-def subject_sort_key(name):
-    if name.isdigit():
-        return (0, int(name))
+subjects = []
 
-    return (1, name.lower())
-
-
-for subject_name in sorted(methods_data.keys(), key=subject_sort_key):
+for subject in sorted(
+    subjects_data.keys(),
+    key=lambda x: int(x)
+):
 
     subjects.append({
-        "name": subject_name,
-        "methods": methods_data[subject_name]
+        "name": subject,
+        "methods": subjects_data[subject]
     })
 
 
-# Write JSON
 with open(OUTPUT_JSON, "w") as f:
     json.dump(
         {"subjects": subjects},
@@ -92,5 +87,8 @@ with open(OUTPUT_JSON, "w") as f:
         indent=2
     )
 
-print(f"\nDone -> {OUTPUT_JSON} generated")
-print(f"Found {len(subjects)} images/subjects")
+
+print(
+    f"Generated {OUTPUT_JSON} "
+    f"with {len(subjects)} subjects."
+)
